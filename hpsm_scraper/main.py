@@ -6,7 +6,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.edge.service import Service
 from selenium.webdriver.edge.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as ec
 
 
 class HpsmScraper:
@@ -30,7 +30,7 @@ class HpsmScraper:
         hpsm_password = self.driver.find_element(By.ID, "password")
         hpsm_password.send_keys(password)
         hpsm_login_button = WebDriverWait(self.driver, 10).until(
-            EC.element_to_be_clickable((By.ID, "submitInter"))
+            ec.element_to_be_clickable((By.ID, "submitInter"))
         )
         hpsm_login_button.click()
         print("Успешный вход в систему")
@@ -55,7 +55,7 @@ class HpsmScraper:
         adm_dict = {}
         for ci in ci_list:
             hpsm_search_input = self.driver.find_element(
-                By.ID, "gs-trigger-cmdcombined"
+                By.ID, "gs-trigger-combined"
             )
             hpsm_search_input.send_keys(f"{ci}")
             hpsm_search_input.send_keys(Keys.ENTER)
