@@ -54,9 +54,7 @@ class HpsmScraper:
 
         adm_dict = {}
         for ci in ci_list:
-            hpsm_search_input = self.driver.find_element(
-                By.ID, "gs-trigger-combined"
-            )
+            hpsm_search_input = self.driver.find_element(By.ID, "gs-trigger-combined")
             hpsm_search_input.send_keys(f"{ci}")
             hpsm_search_input.send_keys(Keys.ENTER)
 
