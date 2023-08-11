@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+# Imports
 import time
 import openpyxl
 from selenium import webdriver
